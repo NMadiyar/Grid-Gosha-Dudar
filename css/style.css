@@ -1,0 +1,47 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.wrapper{
+    display: grid;
+    /*grid-template-columns задает значения колонком,
+    через пробел задается значение блокам, если 4 блока стоят, то 3 блок будет иметь
+     1 значение, а 2 блок второе.
+     Так же будет правильно задавать значения по fr (fractions), лучше всегда
+      указывать в этом значение, т.к с % могут быть проблемы(могут вылезти
+      за экран),чем больше это значение, тем больше места оно занимает*/
+    /*grid-template-columns: repeat (1 значение отвечает за количество колонок, 2 значение
+    отвечает за само значение ширины (fr, % , px).Используется если колонок будет
+    очень много, чтобы не писать отдельно каждую колонку*/
+    grid-template-columns: 1fr 2fr 3fr;
+    /*для добавления отступов используется grid-column-gap, отвечает за
+     вертикальный отступ*/
+    /*grid-column-gap: 1em;*/
+    /*grid-row-gap отвечает за отступы по горизонтальной линии*/
+  /*  grid-row-gap: 1em;*/
+    /*grid-gap добавляет отступы как по горизонтали, так и по вертикали*/
+   grid-gap: 1em;
+    /*grid-auto-rows отвечает за высоту каждой из  колонок, можно прописать вручную,
+    а можно сделать функцию minmax(1 значение минимальная высота, 2 значение макс высота,
+    делается для того, чтобы текст не вылазил за рамки колонок)*/
+    grid-auto-rows: minmax(150px, auto);
+}
+.included{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 1em;
+    grid-auto-rows: 80px;
+
+}
+.included div{
+    background-color: #f4c3a0;
+    border: 1px solid #fff;
+}
+.wrapper div{
+    padding: 1em;
+    background-color: #e7a158;
+}
+.wrapper div.light{
+    padding: 1em;
+    background-color: #f4c3a0;
+}
